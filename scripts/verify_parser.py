@@ -46,6 +46,28 @@ def main() -> int:
                 raise ValueError(f"grid row {y} must be a list with the declared width")
             if any(type(cell) is not int or cell not in (0, 1) for cell in row):
                 raise ValueError(f"grid row {y} must contain only integer 0/1 cells")
+
+        free_cells = sum(cell == 0 for row in grid for cell in row)
+        blocked_cells = sum(cell == 1 for row in grid for cell in row)
+        if free_cells + blocked_cells != parser.width * parser.height:
+            raise ValueError("free and blocked cell counts do not match the map dimensions")
+
+        source_rows = map_path.read_text(encoding="utf-8-sig").splitlines()[4:]
+        if len(source_rows) != parser.height:
+            raise ValueError(f"{map_path}: source map row count does not match the grid")
+        terrain = {".": 0, "G": 0, "@": 1, "O": 1, "T": 1}
+        for y, source_row in enumerate(source_rows):
+            if len(source_row) != parser.width:
+                raise ValueError(f"{map_path}:{y + 5}: source row width does not match the grid")
+            for x, symbol in enumerate(source_row):
+                if symbol not in terrain:
+                    raise ValueError(f"{map_path}:{y + 5}: unsupported terrain {symbol!r}")
+                if grid[y][x] != terrain[symbol]:
+                    raise ValueError(
+                        f"{map_path}:{y + 5}: grid cell ({x}, {y}) is {grid[y][x]}, "
+                        f"expected {terrain[symbol]} for terrain {symbol!r}"
+                    )
+
         for label, point in (("start", start), ("goal", goal)):
             if (
                 not isinstance(point, tuple)
@@ -62,8 +84,6 @@ def main() -> int:
         print(f"Validation: FAILED\nError: {exc}", file=sys.stderr)
         return 1
 
-    free_cells = sum(cell == 0 for row in grid for cell in row)
-    blocked_cells = sum(cell == 1 for row in grid for cell in row)
     print("=== MovingAI Parser Verification ===\n")
     print(f"Dataset: {args.map}")
     print(f"Map: {map_path.name}")
@@ -73,7 +93,11 @@ def main() -> int:
     print(f"Scenario file number: {args.scen}")
     print(f"Scenario file: {scen_path.name}")
     print(f"Scenario count: {parser.scenario_count}\n")
-    print(f"Selected scenario: {args.index}")
+    print(f"Selected scenario: {args.index}\n")
+    print(f"=== Parsed Binary Grid ({parser.width} x {parser.height}) ===\n")
+    for row in grid:
+        print(" ".join(str(cell) for cell in row))
+    print()
     print(f"Start: {start}")
     print(f"Goal: {goal}")
     print(f"Optimal grid length: {info['optimal_length']}\n")
