@@ -19,3 +19,6 @@ htmlcov/
 .vscode/
 *.swp
 
+# Python cache
+__pycache__/
+*.pyc
