@@ -18,7 +18,6 @@ FIXTURE_MAP = os.path.join(ROOT, "theta_small.map")
 
 # --------------------------------------------------------------------------- helpers
 def load_movingai_map(path):
-    """Đọc .map MovingAI tối giản: '.', 'G', 'S' = trống; còn lại = vật cản."""
     with open(path, encoding="utf-8") as f:
         lines = [ln.rstrip("\n") for ln in f]
     height = int(lines[1].split()[1])
@@ -29,10 +28,6 @@ def load_movingai_map(path):
 
 
 def segment_touches_blocked(grid, a, b):
-    """True nếu đoạn thẳng tâm-ô a -> tâm-ô b chạm (kể cả ở góc) một ô vật cản.
-
-    Dùng Liang-Barsky với Fraction. Chạm ô đóng = đúng quy tắc no corner-cutting.
-    """
     p0 = (Fraction(2 * a[0] + 1, 2), Fraction(2 * a[1] + 1, 2))
     d = (Fraction(b[0] - a[0]), Fraction(b[1] - a[1]))
     for cy in range(min(a[1], b[1]), max(a[1], b[1]) + 1):
@@ -154,6 +149,7 @@ class TestContractExamples(unittest.TestCase):
             [0, 0, 0],
         ]
         path = solve(grid, (0, 0), (2, 2))
+        print(f"path = {path}")
         self.assertIsNotNone(path)
         assert_valid_path(self, grid, (0, 0), (2, 2), path)
         self.assertGreater(len(path), 2)
@@ -177,7 +173,7 @@ class TestInputHandling(unittest.TestCase):
     def test_invalid_inputs_raise(self):
         grid = [[0, 1], [0, 0]]
         with self.assertRaises(ValueError):
-            solve(grid, (5, 5), (0, 0))        # start ngoài bản đồ
+           solve(grid, (5, 5), (0, 0))        # start ngoài bản đồ
         with self.assertRaises(ValueError):
             solve(grid, (0, 0), (1, 0))        # goal là vật cản
         with self.assertRaises(ValueError):
@@ -201,13 +197,14 @@ class TestFixtureMap(unittest.TestCase):
         queries = [
             ((0, 0), (11, 7)),
             ((0, 7), (11, 0)),
-            ((3, 3), (11, 7)),   # trong "túi" chữ U
+            ((3, 3), (11, 7)),   
             ((3, 4), (0, 0)),
             ((11, 7), (4, 6)),
         ]
         for start, goal in queries:
             with self.subTest(start=start, goal=goal):
                 path = solve(self.grid, start, goal)
+                print(f"path = {path}")
                 self.assertIsNotNone(path)
                 assert_valid_path(self, self.grid, start, goal, path)
                 cost = path_cost(path)
