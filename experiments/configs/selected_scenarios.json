@@ -1,0 +1,146 @@
+[
+  {
+    "family": "random",
+    "map_name": "random-32-32-20.map",
+    "scenario_file": "random-32-32-20-random-4.scen",
+    "scenario_index": 307
+  },
+  {
+    "family": "random",
+    "map_name": "random-32-32-20.map",
+    "scenario_file": "random-32-32-20-random-24.scen",
+    "scenario_index": 400
+  },
+  {
+    "family": "random",
+    "map_name": "random-32-32-20.map",
+    "scenario_file": "random-32-32-20-random-21.scen",
+    "scenario_index": 187
+  },
+  {
+    "family": "random",
+    "map_name": "random-32-32-20.map",
+    "scenario_file": "random-32-32-20-random-13.scen",
+    "scenario_index": 268
+  },
+  {
+    "family": "random",
+    "map_name": "random-32-32-20.map",
+    "scenario_file": "random-32-32-20-random-13.scen",
+    "scenario_index": 328
+  },
+  {
+    "family": "random",
+    "map_name": "random-32-32-20.map",
+    "scenario_file": "random-32-32-20-random-22.scen",
+    "scenario_index": 395
+  },
+  {
+    "family": "random",
+    "map_name": "random-32-32-20.map",
+    "scenario_file": "random-32-32-20-random-7.scen",
+    "scenario_index": 400
+  },
+  {
+    "family": "random",
+    "map_name": "random-32-32-20.map",
+    "scenario_file": "random-32-32-20-random-8.scen",
+    "scenario_index": 257
+  },
+  {
+    "family": "random",
+    "map_name": "random-32-32-20.map",
+    "scenario_file": "random-32-32-20-random-19.scen",
+    "scenario_index": 248
+  },
+  {
+    "family": "random",
+    "map_name": "random-32-32-20.map",
+    "scenario_file": "random-32-32-20-random-17.scen",
+    "scenario_index": 336
+  },
+  {
+    "family": "random",
+    "map_name": "random-32-32-20.map",
+    "scenario_file": "random-32-32-20-random-2.scen",
+    "scenario_index": 109
+  },
+  {
+    "family": "random",
+    "map_name": "random-32-32-20.map",
+    "scenario_file": "random-32-32-20-random-22.scen",
+    "scenario_index": 116
+  },
+  {
+    "family": "maze",
+    "map_name": "maze-32-32-2.map",
+    "scenario_file": "maze-32-32-2-random-25.scen",
+    "scenario_index": 21
+  },
+  {
+    "family": "maze",
+    "map_name": "maze-32-32-2.map",
+    "scenario_file": "maze-32-32-2-random-14.scen",
+    "scenario_index": 125
+  },
+  {
+    "family": "maze",
+    "map_name": "maze-32-32-2.map",
+    "scenario_file": "maze-32-32-2-random-8.scen",
+    "scenario_index": 279
+  },
+  {
+    "family": "maze",
+    "map_name": "maze-32-32-2.map",
+    "scenario_file": "maze-32-32-2-random-9.scen",
+    "scenario_index": 301
+  },
+  {
+    "family": "maze",
+    "map_name": "maze-32-32-2.map",
+    "scenario_file": "maze-32-32-2-random-24.scen",
+    "scenario_index": 207
+  },
+  {
+    "family": "maze",
+    "map_name": "maze-32-32-2.map",
+    "scenario_file": "maze-32-32-2-random-13.scen",
+    "scenario_index": 92
+  },
+  {
+    "family": "maze",
+    "map_name": "maze-32-32-2.map",
+    "scenario_file": "maze-32-32-2-random-18.scen",
+    "scenario_index": 314
+  },
+  {
+    "family": "maze",
+    "map_name": "maze-32-32-2.map",
+    "scenario_file": "maze-32-32-2-random-14.scen",
+    "scenario_index": 170
+  },
+  {
+    "family": "maze",
+    "map_name": "maze-32-32-2.map",
+    "scenario_file": "maze-32-32-2-random-21.scen",
+    "scenario_index": 261
+  },
+  {
+    "family": "maze",
+    "map_name": "maze-32-32-2.map",
+    "scenario_file": "maze-32-32-2-random-5.scen",
+    "scenario_index": 219
+  },
+  {
+    "family": "maze",
+    "map_name": "maze-32-32-2.map",
+    "scenario_file": "maze-32-32-2-random-1.scen",
+    "scenario_index": 195
+  },
+  {
+    "family": "maze",
+    "map_name": "maze-32-32-2.map",
+    "scenario_file": "maze-32-32-2-random-6.scen",
+    "scenario_index": 27
+  }
+]

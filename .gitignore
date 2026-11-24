@@ -22,3 +22,9 @@ htmlcov/
 # Python cache
 __pycache__/
 *.pyc
+
+# Generated benchmark artifacts (including earlier CSV exports)
+/experiments/results/**/*.csv
+/experiments/results/**/benchmark_report.md
+/experiments/results/**/metadata.json
+/experiments/results/**/figures/*.svg
